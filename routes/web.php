@@ -13,6 +13,10 @@
 
 use App\Events\eventTrigger;
 
+Route::get('trigger_migrate',function(){
+	Artisan::call('migrate', ["--force"=> true ]);
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
